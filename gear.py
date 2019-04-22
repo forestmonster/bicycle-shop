@@ -13,4 +13,13 @@ class Gear(object):
         """
         self._chainring = chainring
         self._cog = cog
-        pass
+
+    def ratio(self):
+        """Calculate the gear ratio."""
+        ratio = self._chainring / self._cog
+        return ratio
+
+
+gear = Gear(chainring=52, cog=11)
+print(f"Creating Gear with a chainring of {gear.chainring} and a cog of {gear.cog}.")
+print(f"Ratio is {gear.ratio}.")
