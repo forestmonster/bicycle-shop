@@ -21,5 +21,6 @@ class Gear(object):
 
 
 gear = Gear(chainring=52, cog=11)
-print(f"Creating Gear with a chainring of {gear.chainring} and a cog of {gear.cog}.")
-print(f"Ratio is {gear.ratio}.")
+ratio = gear.ratio()
+print(f"Creating Gear with a chainring of {gear._chainring} and a cog of {gear._cog}.")
+print(f"Ratio is {ratio}.")
