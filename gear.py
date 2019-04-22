@@ -24,3 +24,8 @@ gear = Gear(chainring=52, cog=11)
 ratio = gear.ratio()
 print(f"Creating Gear with a chainring of {gear._chainring} and a cog of {gear._cog}.")
 print(f"Ratio is {ratio}.")
+
+gear = Gear(chainring=30, cog=27)
+ratio = gear.ratio()
+print(f"Creating Gear with a chainring of {gear._chainring} and a cog of {gear._cog}.")
+print(f"Ratio is {ratio}.")
