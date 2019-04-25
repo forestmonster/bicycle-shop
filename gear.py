@@ -22,7 +22,7 @@ class Gear(object):
             f"{self._cog}, a rim of {self._rim}, and a tire diameter of",
             f"{self._tire}.",
         )
-        print(f"Ratio is {self.ratio()}")
+        print(f"Ratio is {self.ratio()}.")
         print(f"Gear inches is {self.gear_inches()}.")
 
     def ratio(self):
