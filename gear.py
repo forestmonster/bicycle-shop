@@ -7,8 +7,8 @@ class Gear(object):
     def __init__(self, chainring, cog, rim, tire):
         """Construct a Gear.
 
-        :chainring: Integer. Number of teeth.
-        :cog: Integer. Number of teeth.
+        :chainring: Integer. Number of teeth on the forward (pedaled) gear.
+        :cog: Integer. Number of teeth on the rear (wheel) cassette.
         :rim: Integer. Rim diameter.
         :tire: Integer. Tire diameter.
 
