@@ -22,19 +22,17 @@ class Gear(object):
             f"{self._cog}, a rim of {self._rim}, and a tire diameter of",
             f"{self._tire}.",
         )
-        self.ratio()
-        self.gear_inches()
+        print(f"Ratio is {self.ratio()}")
+        print(f"Gear inches is {self.gear_inches()}.")
 
     def ratio(self):
         """Calculate the gear ratio."""
         ratio = self._chainring / self._cog
-        print(f"Ratio is {ratio}.")
         return ratio
 
     def gear_inches(self):
         """Calculate the gear inches."""
         gear_inches = self.ratio() * (self._rim + (self._tire * 2))
-        print(f"Gear inches is {gear_inches}.")
         return gear_inches
 
 
