@@ -11,11 +11,20 @@ class Gear(object):
         :cog: Integer. Number of teeth on the rear (wheel) cassette.
 
         """
-        self._chainring = chainring
-        self._cog = cog
+
+        @property
+        def chainring():
+            self._chainring = chainring
+            return chainring
+
+        @property
+        def cog():
+            self._cog = cog
+            return cog
+
         print(
-            f"Creating Gear with a chainring of {self._chainring}, a cog of",
-            f"{self._cog}.",
+            f"Creating Gear with a chainring of {self.chainring}, a cog of",
+            f"{self.cog}.",
         )
         print(f"Ratio is {self.ratio()}.")
 
@@ -23,6 +32,7 @@ class Gear(object):
         """Calculate the gear ratio."""
         ratio = self._chainring / self._cog
         return ratio
+
 
 gear = Gear(chainring=52, cog=11)
 
