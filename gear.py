@@ -18,10 +18,12 @@ class Gear(object):
 
     @property
     def chainring(self):
+        """Getter method for the 'chainring' property."""
         return self._chainring
 
     @property
     def cog(self):
+        """Getter method for the 'cog' property."""
         return self._cog
 
     @chainring.setter
