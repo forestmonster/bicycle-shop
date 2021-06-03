@@ -4,15 +4,15 @@
 class Gear(object):
     """Create a Gear."""
 
-    def __init__(self, chainring, cog):
+    def __init__(self, chainring: int = None, cog: int = None, rim: int = None, tire: int = None):
         """Construct a Gear.
 
-        :chainring: Integer. Number of teeth on the forward (pedaled) gear.
-        :cog: Integer. Number of teeth on the rear (wheel) cassette.
+        :chainring: Number of teeth on the forward (pedaled) gear.
+        :cog: Number of teeth on the rear (wheel) cassette.
 
         """
-        self._chainring = None
-        self._cog = None
+        self._chainring = chainring
+        self._cog = cog
 
         print(f"Creating Gear with a chainring of {chainring}, a cog of {cog}.")
 
@@ -22,7 +22,7 @@ class Gear(object):
         return self._chainring
 
     @chainring.setter
-    def chainring(self, chainring):
+    def chainring(self, chainring: int = None):
         """Setter method for the 'chainring' property."""
         self._chainring = chainring
 
@@ -32,7 +32,7 @@ class Gear(object):
         return self._cog
 
     @cog.setter
-    def cog(self, cog):
+    def cog(self, cog: int = None):
         """Setter method for the 'cog' property."""
         self._cog = cog
 
@@ -47,7 +47,8 @@ class Gear(object):
 
 # __import__("pdb").set_trace()
 
-gear = Gear(chainring=52, cog=11)
+gear = Gear(chainring='fun', cog=11)
 print(gear.ratio())
 
 gear = Gear(chainring=30, cog=27)
+print(gear.ratio())
