@@ -9,12 +9,18 @@ class Gear(object):
 
         :chainring: Number of teeth on the forward (pedaled) gear.
         :cog: Number of teeth on the rear (wheel) cassette.
+        :rim: Rim diameter in inches.
+        :tire: Tire diameter in inches.
 
         """
         self._chainring = chainring
         self._cog = cog
+        self._rim = rim
+        self._tire = tire
 
-        print(f"Constructing a Gear with a chainring of {chainring}, a cog of {cog}.")
+        print(
+            f"Constructing a Gear with a chainring of {chainring}, a cog of {cog}, a rim diameter of {rim} inches, and a tire diameter of {tire} inches."
+        )
 
     @property
     def chainring(self) -> int:
@@ -39,16 +45,16 @@ class Gear(object):
     def ratio(self) -> int:
         """Calculate the gear ratio."""
         ratio = self._chainring / self._cog
-        # print(f"Ratio is {self.ratio()}.")
         return ratio
 
-    # print(f"Ratio is {self.ratio()}.")
+    def gear_inches(self) -> int:
+        """Calculate the gear inches (commonly used in the US)."""
+        ratio = (self._rim + (self._tire * 2)) * self.ratio()
+        return ratio
 
 
-# __import__("pdb").set_trace()
+gear = Gear(chainring=52, cog=11, rim=26, tire=1.5)
+print(f"Gear ratio is {gear.ratio()}, and gear inches is {gear.gear_inches()}.")
 
-gear = Gear(chainring=52, cog=11)
-print(gear.ratio())
-
-gear = Gear(chainring=30, cog=27)
-print(gear.ratio())
+gear = Gear(chainring=30, cog=27, rim=24, tire=1.25)
+print(f"Gear ratio is {gear.ratio()}, and gear inches is {gear.gear_inches()}.")
