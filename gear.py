@@ -14,20 +14,20 @@ class Gear(object):
         self._chainring = chainring
         self._cog = cog
 
-        print(f"Creating Gear with a chainring of {chainring}, a cog of {cog}.")
+        print(f"Constructing a Gear with a chainring of {chainring}, a cog of {cog}.")
 
     @property
-    def chainring(self):
+    def chainring(self) -> int:
         """Getter method for the 'chainring' property."""
         return self._chainring
 
     @chainring.setter
-    def chainring(self, chainring: int = None):
+    def chainring(self, chainring: int = None) -> None:
         """Setter method for the 'chainring' property."""
         self._chainring = chainring
 
     @property
-    def cog(self):
+    def cog(self) -> int:
         """Getter method for the 'cog' property."""
         return self._cog
 
@@ -36,7 +36,7 @@ class Gear(object):
         """Setter method for the 'cog' property."""
         self._cog = cog
 
-    def ratio(self):
+    def ratio(self) -> int:
         """Calculate the gear ratio."""
         ratio = self._chainring / self._cog
         # print(f"Ratio is {self.ratio()}.")
@@ -47,7 +47,7 @@ class Gear(object):
 
 # __import__("pdb").set_trace()
 
-gear = Gear(chainring='fun', cog=11)
+gear = Gear(chainring=52, cog=11)
 print(gear.ratio())
 
 gear = Gear(chainring=30, cog=27)
