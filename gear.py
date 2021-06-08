@@ -53,6 +53,9 @@ class Gear(object):
         return ratio
 
 
+class Wheel(object):
+    """Create a wheel."""
+
 gear = Gear(chainring=52, cog=11, rim=26, tire=1.5)
 print(f"Gear ratio is {gear.ratio()}, and gear inches is {gear.gear_inches()}.")
 
