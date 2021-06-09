@@ -42,6 +42,26 @@ class Gear(object):
         """Setter method for the 'cog' property."""
         self._cog = cog
 
+    @property
+    def rim(self):
+        """Getter method for the 'rim' property."""
+        pass
+
+    @rim.setter
+    def rim(self):
+        """Setter method for the 'rim' property."""
+        pass
+
+    @property
+    def tire(self):
+        """Setter method for the 'tire' property."""
+        pass
+
+    @tire.setter
+    def tire(self):
+        """Setter method for the 'tire' property."""
+        pass
+
     def ratio(self) -> int:
         """Calculate the gear ratio."""
         ratio = self._chainring / self._cog
@@ -52,9 +72,11 @@ class Gear(object):
         ratio = (self._rim + (self._tire * 2)) * self.ratio()
         return ratio
 
+    def diameters(self):
+        """For each wheel, calculate the diameter."""
+        # [wheel[rim] + ]
+        pass
 
-class Wheel(object):
-    """Create a wheel."""
 
 gear = Gear(chainring=52, cog=11, rim=26, tire=1.5)
 print(f"Gear ratio is {gear.ratio()}, and gear inches is {gear.gear_inches()}.")
