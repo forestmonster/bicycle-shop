@@ -1,11 +1,13 @@
-"""The Gear class represents a Gear."""
+"""The Drivetrain class represents a Drivetrain."""
+
+from typing import List
 
 
-class Gear(object):
-    """Create a Gear."""
+class Drivetrain(object):
+    """Create a Drivetrain."""
 
     def __init__(self, chainring: int = None, cog: int = None, rim: int = None, tire: int = None):
-        """Construct a Gear.
+        """Construct a Drivetrain.
 
         :chainring: Number of teeth on the forward (pedaled) gear.
         :cog: Number of teeth on the rear (wheel) cassette.
@@ -19,7 +21,7 @@ class Gear(object):
         self._tire = tire
 
         print(
-            f"Constructing a Gear with a chainring of {chainring}, a cog of {cog}, a rim diameter of {rim} inches, and a tire diameter of {tire} inches."
+            f"Constructing a Wheel with a chainring of {chainring}, a cog of {cog}, a rim diameter of {rim} inches, and a tire diameter of {tire} inches."
         )
 
     @property
@@ -72,14 +74,15 @@ class Gear(object):
         ratio = (self._rim + (self._tire * 2)) * self.ratio()
         return ratio
 
-    def diameters(self):
+    def diameters(self) -> List:
         """For each wheel, calculate the diameter."""
-        # [wheel[rim] + ]
-        pass
+        # Can't iterate over Drivetrain objects...
+        result = [self._rim + (self._tire * 2) for wheel in self]
+        return result
 
 
-gear = Gear(chainring=52, cog=11, rim=26, tire=1.5)
+gear = Drivetrain(chainring=52, cog=11, rim=26, tire=1.5)
 print(f"Gear ratio is {gear.ratio()}, and gear inches is {gear.gear_inches()}.")
 
-gear = Gear(chainring=30, cog=27, rim=24, tire=1.25)
+gear = Drivetrain(chainring=30, cog=27, rim=24, tire=1.25)
 print(f"Gear ratio is {gear.ratio()}, and gear inches is {gear.gear_inches()}.")
