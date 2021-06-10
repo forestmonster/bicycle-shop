@@ -19,6 +19,7 @@ class Drivetrain(object):
         self._cog = cog
         self._rim = rim
         self._tire = tire
+        self._wheel = self.wheelify(rim=self._rim, tire=self._tire)
 
         print(
             f"Constructing a Drivetrain with a chainring of {chainring}, a cog of {cog}, a rim diameter of {rim} inches, and a tire diameter of {tire} inches."
@@ -64,6 +65,12 @@ class Drivetrain(object):
         """Setter method for the 'tire' property."""
         pass
 
+    def wheelify(self, rim, tire) -> List:
+        """For each wheel, calculate the diameter."""
+        # Return an array of one wheel.
+        result = [rim + (tire * 2)]
+        return result
+
     def ratio(self) -> int:
         """Calculate the gear ratio."""
         ratio = self._chainring / self._cog
@@ -73,12 +80,6 @@ class Drivetrain(object):
         """Calculate the gear inches (commonly used in the US)."""
         ratio = (self._rim + (self._tire * 2)) * self.ratio()
         return ratio
-
-    def diameters(self) -> List:
-        """For each wheel, calculate the diameter."""
-        # Can't iterate over Drivetrain objects...
-        result = [self._rim + (self._tire * 2) for wheel in self]
-        return result
 
 
 gear = Drivetrain(chainring=52, cog=11, rim=26, tire=1.5)
