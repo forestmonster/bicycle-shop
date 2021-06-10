@@ -51,13 +51,13 @@ class Drivetrain(object):
         pass
 
     @rim.setter
-    def rim(self):
+    def rim(self, rim: int = None):
         """Setter method for the 'rim' property."""
-        pass
+        self._rim = rim
 
     @property
-    def tire(self):
-        """Setter method for the 'tire' property."""
+    def tire(self) -> int:
+        """Getter method for the 'tire' property."""
         pass
 
     @tire.setter
