@@ -21,7 +21,7 @@ class Drivetrain(object):
         self._tire = tire
 
         print(
-            f"Constructing a Wheel with a chainring of {chainring}, a cog of {cog}, a rim diameter of {rim} inches, and a tire diameter of {tire} inches."
+            f"Constructing a Drivetrain with a chainring of {chainring}, a cog of {cog}, a rim diameter of {rim} inches, and a tire diameter of {tire} inches."
         )
 
     @property
