@@ -3,7 +3,7 @@
 from typing import List
 
 
-class Drivetrain(object):
+class Drivetrain:
     """Create a Drivetrain."""
 
     def __init__(self, chainring: int = None, cog: int = None, rim: int = None, tire: int = None):
