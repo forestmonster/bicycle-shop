@@ -98,3 +98,17 @@ class RevealingReferences:
     def wheelify(self, data):
         wheel = Wheel(rim=5, tire=10)
         return wheel
+
+
+class Wheel:
+    """Bicycles have Wheels."""
+
+    def __init__(self, rim: int = None, tire: int = None) -> None:
+        """Construct a Wheel for a bicycle."""
+        self._rim = rim
+        self._tire = tire
+        self._wheelsize = self._rim + (self._tire * 2)
+
+    @property
+    def size(self):
+        return self._wheelsize
