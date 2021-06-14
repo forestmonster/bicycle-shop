@@ -87,3 +87,14 @@ print(f"Gear ratio is {gear.ratio()}, and gear inches is {gear.gear_inches()}.")
 
 gear = Drivetrain(chainring=30, cog=27, rim=24, tire=1.25)
 print(f"Gear ratio is {gear.ratio()}, and gear inches is {gear.gear_inches()}.")
+
+
+class RevealingReferences:
+    @property
+    def wheels(self):
+        """Getter method for the 'wheels' instance attribute."""
+        return wheelify(data)
+
+    def wheelify(self, data):
+        wheel = Wheel(rim=5, tire=10)
+        return wheel
